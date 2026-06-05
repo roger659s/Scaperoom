@@ -14,7 +14,30 @@
     <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
+    <!-- PANTALLA DE INTRODUCCIÓN CINEMÁTICA -->
+    <div id="intro-screen">
+        <!-- Vídeo de fondo en bucle y silenciado -->
+        <video id="intro-video" autoplay loop muted playsinline>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Audio de la locución -->
+        <audio id="intro-audio">
+            <source src="audio.mp3" type="audio/mpeg">
+        </audio>
 
+        <!-- Contenido central (Botón y texto) -->
+        <div class="intro-content">
+            <h1 style="color: var(--title-red); font-family: 'Special Elite', cursive; font-size: 3rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin-bottom: 20px;">BUREAU DE INVESTIGACIÓN</h1>
+            <p id="intro-msg" style="color: #e0d5c1; font-family: 'Courier Prime', monospace; font-size: 1.2rem; margin-bottom: 30px; text-shadow: 1px 1px 5px rgba(0,0,0,0.8);">Conexión segura establecida. Transmisión entrante.</p>
+            
+            <button id="intro-btn" onclick="startIntro()">REPRODUCIR MENSAJE CLASIFICADO</button>
+            
+            <br><br>
+            <!-- Botón opcional para saltar la intro por si acaso -->
+            <button id="skip-btn" onclick="enterBureau()" style="background: transparent; border: none; color: #666; font-size: 0.8rem; cursor: pointer; text-decoration: underline; margin-top: 20px;">Omitir transmisión y acceder al sistema</button>
+        </div>
+    </div>
     <div class="app-container">
         <!-- Menú de Navegación Lateral (Etiqueta de la carpeta) -->
         <aside class="sidebar">
