@@ -255,10 +255,24 @@
             </section>
 
             <!-- SECCIÓN 4: RESOLUCIÓN (Preparada para el final) -->
+            <!-- SECCIÓN 4: VEREDICTO -->
             <section id="resolucion" class="view-section">
-                <h1>Cerrar el Caso</h1>
-                <p class="subtitle">Introduce el código o el nombre del culpable para verificar la teoría.</p>
-                <!-- Aquí haremos un input con JavaScript para validar al asesino -->
+                <h1>Veredicto Final</h1>
+                <p class="subtitle">Emisión de orden de arresto oficial.</p>
+
+                <div class="case-card">
+                    <div class="tape"></div>
+                    <h3>Cierre del Caso</h3>
+                    <p>Una vez hayáis analizado todas las pruebas cruzadas, los testimonios y los registros de acceso, introducid el nombre del culpable para emitir la orden de arresto al juez.</p>
+
+                    <div class="resolution-form">
+                        <input type="text" id="culprit-input" placeholder="Nombre del culpable..." autocomplete="off">
+                        <button onclick="checkResolution()">Emitir Orden de Arresto</button>
+                    </div>
+
+                    <!-- Caja donde aparecerá el mensaje de éxito o error -->
+                    <div id="resolution-message" style="display: none; margin-top: 25px; padding: 20px; text-align: center; font-family: 'Courier Prime', monospace; font-weight: 700;"></div>
+                </div>
             </section>
 
         </main>
