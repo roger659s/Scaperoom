@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente Clasificado | Caso Abierto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>BUREAU</h2>
+                <p>Base de Datos</p>
+            </div>
+            <nav>
+                <button class="nav-btn active" onclick="showSection('contexto')">1. El Caso</button>
+                <button class="nav-btn" onclick="showSection('sospechosos')">2. Sospechosos</button>
+                <button class="nav-btn" onclick="showSection('pruebas')">3. Pruebas</button>
+                <button class="nav-btn" onclick="showSection('resolucion')">4. Resolución</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            
+            <section id="contexto" class="view-section active-section">
+                <h1>Informe Preliminar</h1>
+                <p class="subtitle">Aquí pondremos la introducción del misterio y la escena del crimen.</p>
+                </section>
+
+            <section id="sospechosos" class="view-section">
+                <h1>Perfiles de Interés</h1>
+                <p class="subtitle">Análisis de los individuos relacionados con la víctima.</p>
+                </section>
+
+            <section id="pruebas" class="view-section">
+                <h1>Registro de Evidencias</h1>
+                <p class="subtitle">Documentos, interrogatorios y fotografías.</p>
+                </section>
+
+            <section id="resolucion" class="view-section">
+                <h1>Cerrar el Caso</h1>
+                <p class="subtitle">Introduce el código o la respuesta final para verificar si habéis acertado.</p>
+                </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
