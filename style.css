@@ -501,3 +501,60 @@ h1 {
     background-image: repeating-linear-gradient(transparent, transparent 24px, #eee 25px);
     line-height: 25px;
 }
+/* --- ESTILOS PARA LA RESOLUCIÓN FINAL (SECCIÓN 4) --- */
+.resolution-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#culprit-input {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 2px dashed #a39581;
+    color: var(--text-main);
+    text-align: center;
+    font-family: 'Courier Prime', monospace;
+    text-transform: uppercase;
+}
+
+#culprit-input:focus {
+    outline: none;
+    border-color: var(--title-red);
+    background-color: rgba(255,255,255,0.3);
+}
+
+.resolution-form button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background-color: var(--title-red);
+    color: white;
+    border: 2px solid #520b0b;
+    cursor: pointer;
+    font-family: 'Special Elite', cursive;
+    text-transform: uppercase;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+.resolution-form button:hover {
+    background-color: #7a1515;
+    transform: scale(1.05);
+}
+
+/* Estilos para los mensajes de respuesta */
+.success-msg {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px dashed #28a745;
+}
+
+.error-msg {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px dashed #dc3545;
+}
