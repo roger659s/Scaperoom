@@ -1,11 +1,14 @@
-/* Diseño minimalista y limpio */
+/* Estética de Terminal de Inteligencia Premium (Estilo Apple Dark) */
 :root {
-    --bg-color: #f5f5f7;
-    --sidebar-bg: #ffffff;
-    --text-main: #1d1d1f;
-    --text-muted: #86868b;
-    --accent: #0071e3;
-    --border-radius: 12px;
+    --bg-color: #000000;          /* Negro puro de fondo */
+    --panel-bg: #1c1c1e;          /* Gris oscuro para contenedores y tarjetas */
+    --sidebar-bg: #121214;        /* Fondo del menú lateral */
+    --text-main: #f5f5f7;         /* Blanco brillante para texto principal */
+    --text-muted: #86868b;        /* Gris para textos secundarios */
+    --accent: #0a84ff;            /* Azul eléctrico de iOS */
+    --accent-glow: rgba(10, 132, 255, 0.15);
+    --border-color: #2c2c2e;      /* Separadores sutiles */
+    --border-radius: 14px;
 }
 
 * {
@@ -29,63 +32,75 @@ body {
     height: 100%;
 }
 
+/* Menú Lateral */
 .sidebar {
-    width: 260px;
+    width: 280px;
     background-color: var(--sidebar-bg);
-    border-right: 1px solid #e5e5ea;
-    padding: 2rem 1rem;
+    border-right: 1px solid var(--border-color);
+    padding: 2.5rem 1.2rem;
     display: flex;
     flex-direction: column;
 }
 
 .logo {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     padding-left: 1rem;
 }
 
 .logo h2 {
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 1.3rem;
+    color: var(--text-main);
 }
 
 .logo p {
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 2px;
 }
 
 .nav-btn {
     background: none;
     border: none;
     text-align: left;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 0.6rem;
     border-radius: var(--border-radius);
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nav-btn:hover {
-    background-color: #f0f0f5;
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--text-main);
 }
 
 .nav-btn.active {
     background-color: var(--accent);
-    color: white;
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
+/* Área de Contenido Principal */
 .content {
     flex: 1;
-    padding: 3rem;
+    padding: 3.5rem;
     overflow-y: auto;
+    background-color: var(--bg-color);
 }
 
 .view-section {
     display: none;
-    animation: fadeIn 0.3s ease;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .view-section.active-section {
@@ -93,18 +108,65 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     color: var(--text-muted);
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Componentes de Diseño para el Caso */
+.case-card {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
+
+.case-card h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.meta-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.meta-item {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.meta-item label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-item span {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* Estilos para imágenes de evidencias */
+.evidence-img-placeholder {
+    width: 100%;
+    height: 35
