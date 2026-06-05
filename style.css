@@ -1,26 +1,28 @@
-/* Estética de Terminal de Inteligencia Premium (Estilo Apple Dark) */
+/* Estética de Archivo Policial Clásico (Carpeta Manila / Noir) */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
 :root {
-    --bg-color: #000000;          /* Negro puro de fondo */
-    --panel-bg: #1c1c1e;          /* Gris oscuro para contenedores y tarjetas */
-    --sidebar-bg: #121214;        /* Fondo del menú lateral */
-    --text-main: #f5f5f7;         /* Blanco brillante para texto principal */
-    --text-muted: #86868b;        /* Gris para textos secundarios */
-    --accent: #0a84ff;            /* Azul eléctrico de iOS */
-    --accent-glow: rgba(10, 132, 255, 0.15);
-    --border-color: #2c2c2e;      /* Separadores sutiles */
-    --border-radius: 14px;
+    --desk-bg: #241914;           /* Fondo exterior (madera de escritorio oscuro) */
+    --sidebar-bg: #1a110c;        /* Menú lateral oscuro */
+    --folder-bg: #dcb98a;         /* Color de carpeta manila (marrón claro) */
+    --paper-bg: #f2e8d5;          /* Color de hoja de papel amarillenta */
+    --text-main: #1a1a1a;         /* Tinta negra de máquina de escribir */
+    --text-muted: #4d453e;        /* Tinta desgastada */
+    --title-red: #a81010;         /* Rojo de sello policial */
+    --border-color: #b09166;      /* Bordes de la carpeta */
+    --border-radius: 2px;         /* Bordes rectos y crudos, nada de curvas modernas */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Fuente de máquina de escribir para todo */
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace; 
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--desk-bg);
     display: flex;
     height: 100vh;
     overflow: hidden;
@@ -30,143 +32,216 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    padding: 1rem; /* Deja ver un poco el "escritorio" de fondo */
 }
 
-/* Menú Lateral */
+/* Menú Lateral (Cinta de clasificación) */
 .sidebar {
-    width: 280px;
+    width: 260px;
     background-color: var(--sidebar-bg);
-    border-right: 1px solid var(--border-color);
+    border: 2px solid #000;
     padding: 2.5rem 1.2rem;
     display: flex;
     flex-direction: column;
+    color: #e0d5c1;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 10;
 }
 
 .logo {
     margin-bottom: 3.5rem;
     padding-left: 1rem;
+    border-bottom: 2px dashed #4d453e;
+    padding-bottom: 1rem;
 }
 
 .logo h2 {
     font-weight: 700;
-    letter-spacing: 1.5px;
-    font-size: 1.3rem;
-    color: var(--text-main);
+    font-size: 1.5rem;
+    color: var(--title-red); /* Título en rojo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .logo p {
-    color: var(--accent);
-    font-size: 0.75rem;
+    color: #a39581;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .nav-btn {
-    background: none;
-    border: none;
+    background: transparent;
+    border: 1px solid transparent;
     text-align: left;
-    padding: 1.1rem 1.2rem;
+    padding: 1rem;
     margin-bottom: 0.6rem;
-    border-radius: var(--border-radius);
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: #a39581;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+    transition: all 0.2s ease;
 }
 
 .nav-btn:hover {
+    color: #fff;
+    border-left: 3px solid var(--title-red);
     background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-main);
 }
 
 .nav-btn.active {
-    background-color: var(--accent);
-    color: #ffffff;
-    box-shadow: 0 4px 12px var(--accent-glow);
+    color: #fff;
+    background-color: #2e1f17;
+    border: 1px solid #4d453e;
+    border-left: 4px solid var(--title-red);
 }
 
-/* Área de Contenido Principal */
+/* Área de Contenido Principal (La Carpeta Manila) */
 .content {
     flex: 1;
+    background-color: var(--folder-bg);
+    color: var(--text-main);
     padding: 3.5rem;
     overflow-y: auto;
-    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 0 50px rgba(139, 100, 50, 0.2), 5px 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+/* Sello confidencial de fondo */
+.content::before {
+    content: "CONFIDENCIAL";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 8rem;
+    color: rgba(168, 16, 16, 0.05);
+    font-weight: 700;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 10px;
 }
 
 .view-section {
     display: none;
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
-    animation: fadeIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .view-section.active-section {
     display: block;
+    animation: openFolder 0.3s ease-out;
+}
+
+/* Títulos en Rojo */
+h1, h2, h3 {
+    color: var(--title-red);
+    text-transform: uppercase;
 }
 
 h1 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 0.6rem;
-    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    border-bottom: 3px double var(--title-red);
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 .subtitle {
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 3rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1.5rem;
+    margin-top: 10px;
+    font-weight: 700;
 }
 
-/* Componentes de Diseño para el Caso */
+/* Papeles pegados dentro de la carpeta */
 .case-card {
-    background-color: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    background-color: var(--paper-bg);
+    border: 1px solid #ccc1b3;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     line-height: 1.6;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Efecto de clip/celo en los papeles */
+.case-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .case-card h3 {
-    margin-bottom: 1rem;
-    color: var(--accent);
-    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .meta-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 2.5rem;
 }
 
 .meta-item {
-    background-color: var(--panel-bg);
-    border: 1px solid var(--border-color);
-    padding: 1rem 1.5rem;
-    border-radius: var(--border-radius);
+    background-color: var(--paper-bg);
+    border: 1px dashed var(--border-color);
+    padding: 1rem;
 }
 
 .meta-item label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: var(--text-muted);
-    letter-spacing: 1px;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
 .meta-item span {
-    font-weight: 600;
-    font-size: 1.05rem;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
-/* Estilos para imágenes de evidencias */
+/* Estilos para fotos estilo Polaroid */
 .evidence-img-placeholder {
     width: 100%;
-    height: 35
+    height: 350px;
+    background-color: #e6e6e6;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+    border: 10px solid white;
+    border-bottom: 40px solid white;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+    transform: rotate(-1deg);
+}
+
+@keyframes openFolder {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Personalización de la barra de desplazamiento */
+.content::-webkit-scrollbar { width: 10px; }
+.content::-webkit-scrollbar-track { background: var(--folder-bg); }
+.content::-webkit-scrollbar-thumb { background: var(--border-color); border: 1px solid var(--folder-bg); }
