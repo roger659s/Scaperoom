@@ -651,3 +651,55 @@ h1 {
     font-family: 'Special Elite', cursive;
     letter-spacing: 1px;
 }
+/* --- PANTALLA DE INTRODUCCIÓN CINEMÁTICA --- */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    z-index: 9999; /* Por encima de todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 1.5s ease-out; /* Efecto de fundido al terminar */
+}
+
+#intro-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Oscurecemos el vídeo para que el texto resalte */
+    z-index: -1;
+}
+
+.intro-content {
+    text-align: center;
+    z-index: 1;
+    padding: 30px;
+    background: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 80%);
+}
+
+#intro-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: var(--title-red);
+    border: 2px solid var(--title-red);
+    cursor: pointer;
+    font-family: 'Special Elite', cursive;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(168, 16, 16, 0.3);
+}
+
+#intro-btn:hover {
+    background-color: var(--title-red);
+    color: white;
+    box-shadow: 0 0 25px rgba(168, 16, 16, 0.6);
+}
