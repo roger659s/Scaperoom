@@ -27,3 +27,26 @@ function closeModal() {
     const modal = document.getElementById("image-modal");
     modal.style.display = "none";
 }
+// Función para comprobar el asesino sin spoilers en el código fuente
+function checkResolution() {
+    // Captura lo que habéis escrito, lo pasa a minúsculas y quita espacios extra
+    const input = document.getElementById('culprit-input').value.toLowerCase().trim();
+    const msgBox = document.getElementById('resolution-message');
+    
+    // Las respuestas correctas encriptadas en Base64 (¡no intentes descifrarlas!)
+    const validTargets = ["anVsaWFu", "anVsaWFuIGNyb3Nz", "ZWxpYXM=", "ZWxpYXMgdGhvcm5l"];
+    
+    // Encriptamos vuestra respuesta para compararla
+    const encodedInput = btoa(unescape(encodeURIComponent(input)));
+    
+    msgBox.style.display = "block";
+    
+    // Comprobación
+    if (validTargets.includes(encodedInput)) {
+        msgBox.className = "success-msg";
+        msgBox.innerHTML = "¡ORDEN DE ARRESTO APROBADA! <br><br> Habéis hilado las pruebas y las horas correctamente. Buen trabajo, detectives. Caso cerrado.";
+    } else {
+        msgBox.className = "error-msg";
+        msgBox.innerHTML = "ORDEN DENEGADA. <br><br> Las pruebas y las líneas temporales no sostienen esta acusación. Hay algo que habéis pasado por alto.";
+    }
+}
