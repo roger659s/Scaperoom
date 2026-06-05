@@ -85,7 +85,7 @@
                     
                     <!-- Polaroid Ultra Currada -->
                     <div class="evidence-img-placeholder" style="padding: 0;">
-                        <img src="Foto1ScapeRoom.png" alt="Fotografía de la escena del crimen" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;">
+                        <img src="Foto1ScapeRoom.png" alt="Fotografía de la escena del crimen" class="zoomable" onclick="openModal(this.src)" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;">
                     </div>
                 </div>
             </section>
@@ -104,7 +104,7 @@
                     
                     <div class="suspect-profile">
                         <div class="suspect-photo" style="padding: 0;">
-                            <img src="Foto2ScapeRoom.png" alt="Victoria Vance" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="Foto2ScapeRoom.png" alt="Victoria Vance" class="zoomable" onclick="openModal(this.src)" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="suspect-details">
                             <ul>
@@ -124,7 +124,7 @@
                     
                     <div class="suspect-profile">
                         <div class="suspect-photo" style="padding: 0;">
-                            <img src="Foto3ScapeRoom.png" alt="Julián Cross" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="Foto3ScapeRoom.png" class="zoomable" onclick="openModal(this.src)" alt="Julián Cross" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="suspect-details">
                             <ul>
@@ -144,7 +144,7 @@
                     
                     <div class="suspect-profile">
                         <div class="suspect-photo" style="padding: 0;">
-                            <img src="Foto4ScapeRoom.png" alt="Dra. Elena Rostova" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="Foto4ScapeRoom.png" class="zoomable" onclick="openModal(this.src)" alt="Dra. Elena Rostova" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="suspect-details">
                             <ul>
@@ -164,7 +164,7 @@
                     
                     <div class="suspect-profile">
                         <div class="suspect-photo" style="padding: 0;">
-                            <img src="Foto5ScapeRoom.png" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="Foto5ScapeRoom.png" class="zoomable" onclick="openModal(this.src)" alt="Elias Thorne" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="suspect-details">
                             <ul>
@@ -195,6 +195,11 @@
     </div>
 
     <!-- Carga del script que controla la navegación -->
+    <!-- Visor de Imágenes a pantalla completa (Lightbox) -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
