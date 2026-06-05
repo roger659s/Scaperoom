@@ -4,90 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expediente Clasificado | Caso Abierto</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Importamos las fuentes de Google Fonts para la estética de máquina de escribir y sellos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <!-- Enlace al CSS (con el ?v=3 para forzar al navegador a cargar los nuevos cambios) -->
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
     <div class="app-container">
+        <!-- Menú de Navegación Lateral (Etiqueta de la carpeta) -->
         <aside class="sidebar">
             <div class="logo">
                 <h2>BUREAU</h2>
-                <p>Base de Datos</p>
+                <p>CASO #409-VANCE</p>
             </div>
             <nav>
-                <button class="nav-btn active" onclick="showSection('contexto')">1. El Caso</button>
+                <button class="nav-btn active" onclick="showSection('contexto')">1. Informe</button>
                 <button class="nav-btn" onclick="showSection('sospechosos')">2. Sospechosos</button>
-                <button class="nav-btn" onclick="showSection('pruebas')">3. Pruebas</button>
-                <button class="nav-btn" onclick="showSection('resolucion')">4. Resolución</button>
+                <button class="nav-btn" onclick="showSection('pruebas')">3. Evidencias</button>
+                <button class="nav-btn" onclick="showSection('resolucion')">4. Veredicto</button>
             </nav>
         </aside>
 
+        <!-- Contenido Principal (La Carpeta Manila) -->
         <main class="content">
             
+            <!-- SECCIÓN 1: EL CASO (Ya con el estilo ultra currado) -->
             <section id="contexto" class="view-section active-section">
+                <!-- Mancha de café decorativa -->
+                <div class="coffee-stain"></div>
+
                 <h1>Informe Preliminar</h1>
-                <p class="subtitle">Expediente Oficial del Departamento de Investigación Criminal. Acceso Restringido.</p>
-
-                <div class="meta-info">
-                    <div class="meta-item">
-                        <label>Víctima</label>
-                        <span>Adrián Vance (54 años)</span>
-                    </div>
-                    <div class="meta-item">
-                        <label>Lugar del Crimen</label>
-                        <span>Ático Vance, Edificio Horizon</span>
-                    </div>
-                    <div class="meta-item">
-                        <label>Hora Estimada</label>
-                        <span>Entre las 22:15 y las 23:00</span>
-                    </div>
-                    <div class="meta-item">
-                        <label>Causa de Muerte</label>
-                        <span>Parada cardiorrespiratoria (Sustancia letal)</span>
-                    </div>
-                </div>
+                <p class="subtitle">Expediente Oficial. Unidad de Homicidios.</p>
 
                 <div class="case-card">
+                    <!-- El trozo de celo -->
+                    <div class="tape"></div>
+                    <!-- El sello rojo estampado -->
+                    <div class="stamp">CLASIFICADO</div>
+                    
                     <h3>El Incidente</h3>
-                    <p>Anoche, durante la exclusiva cena de gala de la Fundación Vance, el magnate y filántropo Adrián Vance se retiró a su despacho privado alegando una repentina indisposición. Cuarenta minutos más tarde, su asistente personal lo encontró desplomado sobre su mesa de roble. La puerta estaba cerrada por dentro con un pasador mecánico.</p>
+                    <p>Anoche, durante la exclusiva cena de gala de la Fundación Vance, el magnate y filántropo Adrián Vance se retiró a su despacho privado alegando una repentina indisposición. Cuarenta minutos más tarde, su asistente personal lo encontró desplomado sobre su mesa de roble. La puerta estaba <span class="redacted">cerrada por dentro</span> con un pasador mecánico.</p>
                     <br>
-                    <p>No hay signos de violencia física en el cuerpo, pero la copa de vino de su mesa contenía trazas de un compuesto químico derivado de plantas exóticas, indetectable al gusto. El asesino estaba en la cena, consiguió acceder a su copa o a su botella privada, y conocía perfectamente los hábitos de la víctima.</p>
+                    <p>No hay signos de violencia física en el cuerpo, pero la copa de vino de su mesa contenía trazas de un compuesto químico derivado de plantas exóticas. El asesino estaba en la cena, consiguió acceder a su copa, y conocía perfectamente los hábitos de la víctima.</p>
                 </div>
 
                 <div class="case-card">
+                    <div class="tape"></div>
                     <h3>La Escena del Crimen</h3>
                     <p>El despacho es un espacio amplio con una gran cristalera que da a la ciudad. Sobre la mesa se encontraron tres elementos clave que desconciertan a los forenses:</p>
-                    <ul style="margin-left: 1.5rem; margin-top: 1rem; color: #d1d1d6;">
+                    <ul style="margin-left: 2rem; margin-top: 1rem; list-style-type: square;">
                         <li>Una copa de vino tinto a medio terminar.</li>
-                        <li>Un reloj de pulsera clásico, de cuerda, con la esfera de cristal rota. Las manecillas se detuvieron exactamente a las 22:42.</li>
+                        <li>Un reloj de pulsera clásico, de cuerda, con la esfera de cristal rota. Las manecillas se detuvieron exactamente a las <strong>22:42</strong>.</li>
                         <li>Una nota manuscrita sobre su agenda que dice: <em>"El precio del silencio ha subido. Última oportunidad."</em></li>
                     </ul>
-        
+                    
+                    <!-- Polaroid Ultra Currada -->
                     <div class="evidence-img-placeholder">
-                        [AQUÍ IRÁ TU IMAGEN 1]<br>
-                        Usa el prompt de abajo en Midjourney/DALL-E para crearla, guárdala como "escena.jpg" y ponla aquí con una etiqueta &lt;img&gt; cuando la tengas.
+                        [FOTOGRAFÍA C.S.I]<br>
+                        AQUÍ IRÁ TU IMAGEN GENERADA
                     </div>
                 </div>
             </section>
 
+            <!-- SECCIÓN 2: SOSPECHOSOS (Preparada para el siguiente paso) -->
             <section id="sospechosos" class="view-section">
                 <h1>Perfiles de Interés</h1>
-                <p class="subtitle">Análisis de los individuos relacionados con la víctima.</p>
-                </section>
+                <p class="subtitle">Individuos presentes durante la ventana temporal del crimen.</p>
+                <!-- Aquí crearemos las tarjetas de sospechosos -->
+            </section>
 
+            <!-- SECCIÓN 3: PRUEBAS (Preparada para el siguiente paso) -->
             <section id="pruebas" class="view-section">
                 <h1>Registro de Evidencias</h1>
-                <p class="subtitle">Documentos, interrogatorios y fotografías.</p>
-                </section>
+                <p class="subtitle">Documentos, transcripciones y material incautado.</p>
+                <!-- Aquí pondremos los huecos para las imágenes y puzles -->
+            </section>
 
+            <!-- SECCIÓN 4: RESOLUCIÓN (Preparada para el final) -->
             <section id="resolucion" class="view-section">
                 <h1>Cerrar el Caso</h1>
-                <p class="subtitle">Introduce el código o la respuesta final para verificar si habéis acertado.</p>
-                </section>
+                <p class="subtitle">Introduce el código o el nombre del culpable para verificar la teoría.</p>
+                <!-- Aquí haremos un input con JavaScript para validar al asesino -->
+            </section>
 
         </main>
     </div>
 
+    <!-- Carga del script que controla la navegación -->
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
