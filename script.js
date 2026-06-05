@@ -50,3 +50,38 @@ function checkResolution() {
         msgBox.innerHTML = "ORDEN DENEGADA. <br><br> Las pruebas y las líneas temporales no sostienen esta acusación. Hay algo que habéis pasado por alto.";
     }
 }
+// Función que arranca el vídeo y el audio
+function startIntro() {
+    // Ocultar el botón principal
+    document.getElementById('intro-btn').style.display = 'none';
+    
+    // Cambiar el texto para dar inmersión
+    const msg = document.getElementById('intro-msg');
+    msg.innerHTML = "> Desencriptando archivo de audio...<br>> Reproduciendo transmisión...";
+    msg.style.color = "#4caf50"; // Verde terminal
+    
+    // Reproducir el audio
+    const audio = document.getElementById('intro-audio');
+    audio.play();
+    
+    // Cuando el audio termine de reproducirse por completo, entra al Bureau
+    audio.onended = function() {
+        enterBureau();
+    };
+}
+
+// Función que hace desaparecer la intro con un fundido
+function enterBureau() {
+    const introScreen = document.getElementById('intro-screen');
+    
+    // Empieza a desvanecerse
+    introScreen.style.opacity = '0';
+    
+    // Espera 1.5 segundos (lo que dura la transición CSS) y lo borra del todo
+    setTimeout(() => {
+        introScreen.style.display = 'none';
+        
+        // Opcional: Pausar el vídeo oculto para que no consuma recursos
+        document.getElementById('intro-video').pause();
+    }, 1500);
+}
